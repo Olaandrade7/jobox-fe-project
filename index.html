@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>BMF Attorneys Contract page</title>
+    <!--Giving credit to https://ekoopmans.github.io/html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function($)
+      {
+         $(document).on('click', '.pdf'),function(event)
+         {
+          event.preventDefualt();
+          var element = document.getElementByClass('container');
+          html2pdf().from(element).save();
+          
+         } 
+      });
+    </script>
+
+</style>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
+	<script type="text/javascript">
+	$(document).ready(function($) 
+	{ 
+		$(document).on('click', '.pdf', function(event) 
+		{
+			event.preventDefault();
+			//credit to https://ekoopmans.github.io/html2pdf.js
+			var element = document.getElementByClass('container'); 
+      html2pdf().from(element).save();
+		});
+	});
+	</script>
+  </head>
+
+
+
+
+  <body>
+    <div class="container">
+      <form>
+        <p><u>RECUIRMENT RATES AND TERMS AGREEMENT</u></p>
+        <br>
+        <h2>FIXED TERM AGREEMENT</h2>
+        <br><p>between</p>
+        <p><br><b><center>BMF ATTORNEYS </center><br><center>with company registration number 2022/123456/07</center></b></p>
+        <p>and</p>
+        <center><input type="text" id="name" placeholder="Your Company Name" onkeyup="validateName()" required /> </center>
+        <span id="name-error"></span>
+        <p>Collectively referred herein as the “parties”</p>
+
+
+
+        <ol>
+        <p><br><li><b>Payment Terms:</b><br />
+          <ul style="list-style-type: disc" class="indent"><li>BMF Attorney’s fee R <input type="number" id="Payment-Amount" placeholder="Insert Payment Amount" required>
+          <span id="payment-error"></span>
+          (excluding VAT). The retainer fee can be paid upfront, or month-to-month and the payment terms can be payable as follows:</li>
+
+          <ul style="list-style-type: disc" class="indent1"><li>Upfront:</li> <ul style="list-style-type: square" class="indent2"><li>Three-twelfths of the fee during the probation period in 3 equal instalments by the 7th day of each month</li> 
+          <li>Nine-twelfths of the fee upon conclusion of the probation period of employment payable on the 7th day of the 4th month.</li></ul> 
+          <li>Month-to-month:</li> 
+          <ul style="list-style-type: square" class="indent2"><li>The month-to-month fee shall be paid by the 7th day of each month</li> </ul></ul>
+          <li>No variation or amendment to this Agreement shall be of any effect unless such amendment is put in writing and signed by all parties</li>
+          <li>Any documentation prepared by BMF Attorneys remains its property</li> </ul> </p> </li>
+          
+        <br>
+        <li><b>Appointment</b> 
+        <br>
+          <ol class="indent3"><li>The Client has procured the services of <b>BMF Attorneys</b> and hereby accepts the appointment as an independent contractor of the Client for a fixed period of time.</li>
+          <li>The reason for this fixed-term contract is <b>for the appointment and completion of the </b> </p> <input type="text" id="Service-Description" placeholder="Service Description" onkeyup="validateDescription()" required /> 
+          <span id="description-error"></span>
+          </li> </ol>
+        <p>
+        <li><b>Duration</b> 
+            <ol class="indent3"><li>Notwithstanding the date of signature hereof, this fixed term contract shall be deemed to have commenced on the
+            <input type="date" id="Start-date" placeholder="insert start date" required /> <span id="start-error"></span>and will terminate, without further notice, on the 
+        <input type="date" id="End-date" placeholder="insert end date" required/> <span id="end-error"></span>. </li> </ol></p>
+        <p> <ol class="indent3"><li>The automatic termination of the contract on the Termination Date shall not be construed as a dismissal but as the completion of a fixed term contract. </li></ol>
+        </p>
+        <li>
+        <br>
+        <br>
+        <p>Signed at&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;on</p>
+        <br>
+        <br>
+        <p>________________________________________</p>
+        <p>Who warrants authority on behalf of Jobox</p>
+        <br>
+        <p>Signed at&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;on</p>
+        <br>
+        <br>
+        <p>_________________________________________</p>
+        <p>Who warrants authority on behalf of</p> </li>
+    </ol>
+        <br>
+        <br>
+        <button type="submit" id="pdf">Download in to pdf form</button>
+        <span id="submit-error"></span>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
