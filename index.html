@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="style.css" />
     <title>BMF Attorneys Contract page</title>
 <!--Giving credit to https://www.youtube.com/watch?v=p1tdw924mmI -->
-	<script src="/html2pdf/js/html2pdf.bundle.min.js" ></script>
-	<script type="text/javascript">
+  <script src="/html2pdf/js/html2pdf.bundle.min.js" ></script>
+  <script type="text/javascript">
      function generatePDF() {
         const element = document.getElementById('pdfhtml');
         const sideicon = document.getElementByClassName('sideicon');
@@ -21,23 +21,7 @@
                 });
          } ,100);
      }
-
-	</script>
-</style>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
-	<script type="text/javascript">
-	$(document).ready(function($) 
-	{ 
-		$(document).on('click', '.pdf', function(event) 
-		{
-			event.preventDefault();
-			//credit to https://ekoopmans.github.io/html2pdf.js
-			var element = document.getElementByClass('container'); 
-      html2pdf().from(element).save();
-		});
-	});
-	</script>
+  </script>
   </head>
 
 
