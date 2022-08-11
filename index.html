@@ -4,22 +4,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>BMF Attorneys Contract page</title>
-    <!--Giving credit to https://ekoopmans.github.io/html2pdf.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
+<!--Giving credit to https://www.youtube.com/watch?v=p1tdw924mmI -->
+	<script src="/html2pdf/js/html2pdf.bundle.min.js" ></script>
+	<script type="text/javascript">
+     function generatePDF() {
+        const element = document.getElementById('pdfhtml');
+        const sideicon = document.getElementByClassName('sideicon');
 
-    <script type="text/javascript">
-      $(document).ready(function($)
-      {
-         $(document).on('click', '.pdf'),function(event)
-         {
-          event.preventDefualt();
-          var element = document.getElementByClass('container');
-          html2pdf().from(element).save();
-          
-         } 
-      });
-    </script>
+        setTimeout(() => {
+               html2pdf(element, {
+                margin:      [10,2,10,2],
+                filename:    'devender.pdf',
+                image:       { type: 'png', quality: 0.6 },
+                html2canvas: { scale: 2 , ignoreElements: sideicon , logging: true, dpi: 1200, letterRendering: true },
+                jsPDF:       { unit: 'cm', format: 'letter', orientation: 'landscape' }
+                });
+         } ,100);
+     }
 
+	</script>
 </style>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
@@ -80,7 +83,7 @@
             <ol class="indent3"><li>Notwithstanding the date of signature hereof, this fixed term contract shall be deemed to have commenced on the
             <input type="date" id="Start-date" placeholder="insert start date" required /> <span id="start-error"></span>and will terminate, without further notice, on the 
         <input type="date" id="End-date" placeholder="insert end date" required/> <span id="end-error"></span>. </li> </ol></p>
-        <p> <ol class="indent3"><li>The automatic termination of the contract on the Termination Date shall not be construed as a dismissal but as the completion of a fixed term contract. </li></ol>
+        <p> <ol class="indent4" start="2" ><li>The automatic termination of the contract on the Termination Date shall not be construed as a dismissal but as the completion of a fixed term contract. </li></ol>
         </p>
         <li>
         <br>
@@ -100,7 +103,7 @@
         <br>
         <br>
         <button type="submit" id="pdf">Download in to pdf form</button>
-        <span id="submit-error"></span>
+        <span id="submit-error" id="pdf" onclick="generatePDF()"></span>
       </form>
     </div>
     <script src="script.js"></script>
